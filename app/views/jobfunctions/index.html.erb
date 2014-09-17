@@ -1,0 +1,27 @@
+<h1>Listing jobfunctions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @jobfunctions.each do |jobfunction| %>
+      <tr>
+        <td><%= jobfunction.name %></td>
+        <td><%= link_to 'Show', jobfunction %></td>
+        <td><%= link_to 'Edit', edit_jobfunction_path(jobfunction) %></td>
+        <td><%= link_to 'Destroy', jobfunction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Jobfunction', new_jobfunction_path %>
